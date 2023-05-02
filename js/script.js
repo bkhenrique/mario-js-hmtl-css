@@ -3,7 +3,7 @@ const pipe= document.querySelector('.pipe');
 const mario = document.querySelector('.mario');
 const finalGame = document.querySelector('.final-game');
 const musicaGame = document.getElementById("musica-game");
-
+//placar jogo
 const pontosElemento = document.getElementById("pontos"); // seleciona o elemento HTML que exibirá o placar
 let pontos = 0; // variável para armazenar o placar inicialmente definido como zero
 const btnReiniciarJogo = document.getElementById('reiniciar-jogo');
@@ -19,21 +19,19 @@ let areaRecorde = document.querySelector('#nome-jogador');
 let nomeJogador = localStorage.getItem('nomeJogador');
 areaRecorde.textContent = nomeJogador;
 
-
+//botao de adicionar o nome do recorde
 const btoAdicionarNome = document.querySelector('#reiniciar-jogo-recorde');
  btoAdicionarNome.addEventListener('click',function(){
-  let nomeAdcionar = document.querySelector('#nome-jogador-inicio');//input 
+  let nomeAdcionar = document.querySelector('#nome-jogador-inicio'); 
 
  localStorage.setItem('nomeJogador', nomeAdcionar.value)
-
-  let areaRecorde = document.querySelector('#nome-jogador');
+ let areaRecorde = document.querySelector('#nome-jogador');
   areaRecorde.textContent= nomeAdcionar.value;
 
-  
-  location.reload()
+  location.reload()//reload pelo botao do recorde
  });
 
-function reiniciarJogo() {
+function reiniciarJogo() {//reload do jogo pelo botao 
 location.reload()
 }
 
@@ -88,7 +86,7 @@ let loop= setInterval(() => {
         if(pontos > getRecorde ){
           localStorage.setItem('pontuacaoRecorde', pontos)
 
-          let escondDados =document.querySelector('#coleta-dados-esconde');
+          let escondDados =document.querySelector('#coleta-dados-esconde');//retira a classe hidden do modal do recorde
           escondDados.classList.remove('hiden');
           
           
@@ -105,7 +103,7 @@ let loop= setInterval(() => {
 
 },10);
 
-
+//detecta teclado ou toque de tela
 elementoInterativo.addEventListener('keydown', jump);
 elementoInterativo.addEventListener('touchstart', jump);
 
