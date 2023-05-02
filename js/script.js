@@ -5,6 +5,7 @@ const finalGame = document.querySelector('.final-game');
 const musicaGame = document.getElementById("musica-game");
 
 
+
 const pontosElemento = document.getElementById("pontos"); // seleciona o elemento HTML que exibirá o placar
 let pontos = 0; // variável para armazenar o placar inicialmente definido como zero
 const btnReiniciarJogo = document.getElementById('reiniciar-jogo');
@@ -17,7 +18,6 @@ function reiniciarJogo() {
 
 location.reload()
 }
-
 
 function atualizarPlacar() {
   pontosElemento.textContent = pontos; // atualize o texto do elemento de placar
