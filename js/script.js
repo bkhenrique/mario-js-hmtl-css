@@ -2,8 +2,23 @@ const elementoInterativo = document; // aqui você pode selecionar o elemento in
 const pipe= document.querySelector('.pipe');
 const mario = document.querySelector('.mario');
 const finalGame = document.querySelector('.final-game');
+const pontosElemento = document.getElementById("pontos"); // seleciona o elemento HTML que exibirá o placar
+let pontos = 0; // variável para armazenar o placar inicialmente definido como zero
+const btnReiniciarJogo = document.getElementById('reiniciar-jogo');
+btnReiniciarJogo.addEventListener('click', reiniciarJogo);
+let pontuacaoRecorde = document.querySelector('#pontuacao-recorde');
+let getRecorde = localStorage.getItem('pontuacaoRecorde');
+pontuacaoRecorde.textContent = getRecorde;
+
+function reiniciarJogo() {
+
+location.reload()
+}
 
 
+function atualizarPlacar() {
+  pontosElemento.textContent = pontos; // atualize o texto do elemento de placar
+}
 
 function jump(event) {
   const mario = document.querySelector('.mario'); // selecione o elemento que receberá a classe 'jump'
@@ -22,7 +37,7 @@ function jump(event) {
   }
 }
 
-const loop= setInterval(() => {
+let loop= setInterval(() => {
     const pipiPosition = pipe.offsetLeft;
     const marioPosition= +window.getComputedStyle(mario).bottom.replace('px','');
     
@@ -38,11 +53,25 @@ const loop= setInterval(() => {
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
         finalGame.src= './img/fina2.png';
+        console.log(pontos);
+
+        if(pontos > getRecorde ){
+          localStorage.setItem('pontuacaoRecorde', pontos)
+          
+        };
+
 
        clearInterval(loop);
+    } else {
+      pontos++; // adiciona um ponto a cada iteração do loop enquanto o jogo continua
+      atualizarPlacar(); // atualiza o placar
+      console.log(pontos);
+
     }
 
 },10);
+
+
 
 elementoInterativo.addEventListener('keydown', jump);
 elementoInterativo.addEventListener('touchstart', jump);
