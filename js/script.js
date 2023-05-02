@@ -2,6 +2,9 @@ const elementoInterativo = document; // aqui você pode selecionar o elemento in
 const pipe= document.querySelector('.pipe');
 const mario = document.querySelector('.mario');
 const finalGame = document.querySelector('.final-game');
+const musicaGame = document.getElementById("musica-game");
+
+
 const pontosElemento = document.getElementById("pontos"); // seleciona o elemento HTML que exibirá o placar
 let pontos = 0; // variável para armazenar o placar inicialmente definido como zero
 const btnReiniciarJogo = document.getElementById('reiniciar-jogo');
@@ -41,6 +44,7 @@ let loop= setInterval(() => {
     const pipiPosition = pipe.offsetLeft;
     const marioPosition= +window.getComputedStyle(mario).bottom.replace('px','');
     
+    
     if(pipiPosition <= 120 && pipiPosition > 0 && marioPosition < 80){
 
         pipe.style.animation ='nome';
@@ -53,6 +57,9 @@ let loop= setInterval(() => {
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
         finalGame.src= './img/fina2.png';
+        musicaGame.play(); // para tocar a música
+        
+
         console.log(pontos);
 
         if(pontos > getRecorde ){
