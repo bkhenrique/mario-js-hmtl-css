@@ -24,7 +24,7 @@ const loop= setInterval(() => {
     const pipiPosition = pipe.offsetLeft;
     const marioPosition= +window.getComputedStyle(mario).bottom.replace('px','');
 
-    if(pipiPosition <= 120 && pipiPosition >0 && marioPosition < 80){
+    if(pipiPosition <= 120 && pipiPosition > 0 && marioPosition < 80){
 
         pipe.style.animation ='nome';
         pipe.style.left = `${pipiPosition}px`;
@@ -33,9 +33,8 @@ const loop= setInterval(() => {
         mario.style.bottom = `${marioPosition}px`;
 
         mario.src = '../img/game-over.png';
-        mario.style.width ='75px';
-        mario.style.marginLeft ='50px';
-        
+        mario.style.width = '75px';
+        mario.style.marginLeft = '50px';
 
        clearInterval(loop);
     }
