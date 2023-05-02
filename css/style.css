@@ -12,6 +12,9 @@
     background-color: gold;
     height: 30px;
 }
+h5{
+    font-size: 20px;
+}
 
 .game-board{
  width: 100%;
@@ -89,6 +92,25 @@
     max-width: 300px;
    
    
+}
+.coleta-dados{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+formacoleta{
+    background-color: aliceblue;
+   height: 50px;
+   padding: 20px;
+}
+.hiden{
+    visibility: hidden;
 }
 @keyframes pipe-animation {
     from{

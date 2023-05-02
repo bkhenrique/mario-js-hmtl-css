@@ -16,21 +16,32 @@
        <div class="final-game-container"> <img src="" class="final-game"></div>
      
  </div>
+ <div class="coleta-dados hiden" id="coleta-dados-esconde">
+    <div>
+       
+            <label for="nome-jogador-inicio">Digite seu Nome:</label>
+           <input type="text" id="nome-jogador-inicio">
+           <button  id="reiniciar-jogo-recorde">Reiniciar Jogo</button>
+        
+    </div>
+    
+</div>
  <div class="banner-cont">
     
      <p class="placar">Seus Pontos:<span class="span-pontos" id="pontos">0</span></p>
      
  </div>
- <div ><button id="reiniciar-jogo">Reiniciar Jogo</button></div>
+ <div ><button id="reiniciar-jogo">Salvar e Continuar</button></div>
  <div class="container-banner">
     
     <div class="banner-1">
         <img src="./img/supermario.png" class="banner">
     </div>
     <div class="banner-1 recordes">
-       <p>Recordes: <p id="pontuacao-recorde"></p></p>
+        <h5>Recordes:</h5>
+       <p><span id="nome-jogador"> </span>: <span id="pontuacao-recorde">  </span></p>
     </div>
-    
+   
 
  </div>
  <audio id="musica-game" src="./music/mario-game-over.mp3"></audio>
