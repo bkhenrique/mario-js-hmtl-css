@@ -1,6 +1,8 @@
 const elementoInterativo = document; // aqui você pode selecionar o elemento interativo desejado
 const pipe= document.querySelector('.pipe');
 const mario = document.querySelector('.mario');
+const finalGame = document.querySelector('.final-game');
+
 
 
 function jump(event) {
@@ -23,7 +25,7 @@ function jump(event) {
 const loop= setInterval(() => {
     const pipiPosition = pipe.offsetLeft;
     const marioPosition= +window.getComputedStyle(mario).bottom.replace('px','');
-
+    
     if(pipiPosition <= 120 && pipiPosition > 0 && marioPosition < 80){
 
         pipe.style.animation ='nome';
@@ -32,9 +34,10 @@ const loop= setInterval(() => {
         mario.style.animation ='nome';
         mario.style.bottom = `${marioPosition}px`;
 
-        mario.src = '../img/game-over.png';
+        mario.src = './img/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
+        finalGame.src= './img/fina2.png';
 
        clearInterval(loop);
     }
